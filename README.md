@@ -116,7 +116,7 @@ $ maka run
 
 This will automatically load your config/development/env.sh and config/development/settings.json files.
 
-### Run the Application with a Different Envmakament
+### Run the Application with a Different Environment
 ```sh
 $ maka run --env=staging
 ```

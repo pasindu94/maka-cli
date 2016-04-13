@@ -5,7 +5,7 @@ var argv = require('minimist')(process.argv.slice(2));
 var args = argv._;
 var Maka = require('../lib/maka.js');
 
-global.IRON_COMMAND_PATH = __dirname;
+global.MAKA_COMMAND_PATH = __dirname;
 
 Fiber(function () {
   Maka.run(args, argv);
