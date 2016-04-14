@@ -5,7 +5,7 @@ Meteor Apps Kick Ass! (maka)
 Maka is a command line scaffolding tool for Meteor applications. Maka has been
 adapted from EventedMind's iron-meteor.
 
-Currently Maka was created form  a need for compatibility for Meteor 1.3.1.
+Currently Maka was created from  a need for compatibility for Meteor 1.3.1.
 
 Maka's immediate goal is to bring WebComponents to the cli generation.  Ideally, you'll be able
 to invoke:
