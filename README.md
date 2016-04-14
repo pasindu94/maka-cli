@@ -7,13 +7,14 @@ adapted from EventedMind's iron-meteor.
 
 Currently Maka was created from  a need for compatibility for Meteor 1.3.1.
 
+It automatically creates project structure, files and boilerplate code.
+
+
 Maka's immediate goal is to bring WebComponents to the cli generation.  Ideally, you'll be able
 to invoke:
 ```
 $ maka g:component <component-name>
 ```
-
-It automatically creates project structure, files and boilerplate code.
 
 ## Installation
 Install the maka command line tool globally so you can use it from any project directory.
@@ -93,9 +94,6 @@ $ maka create my-app
 
 The following parameters can be specified:
 ```
---css=css|scss|less
---js=js|coffee|es6
---html=html|jade
 --skip-template-css=true|false
 --skip-template-js=true|false
 --skip-template-html=true|false
@@ -108,6 +106,11 @@ The following parameters can be specified:
 ### Run Your Application
 ```sh
 $ maka run
+```
+
+or just
+```sh
+$ maka
 ```
 
 This will automatically load your config/development/env.sh and config/development/settings.json files.
@@ -185,7 +188,7 @@ maka mup <environment> --setup
 Maka projects require buildpacks to look for the app in /app/ in addition to the root for deployments to work. Currently there is a patched version of the Horse buildpack available that is compatible with Iron based projects. Use this fork until the patches has been added to the main Horse repo.
 
 ```sh
-$ heroku config:set BUILDPACK_URL=https://github.com/lirbank/meteor-buildpack-horse.git
+$ heroku buildpacks:set https://github.com/alykoshin/meteor-buildpack-horse-1202-fixed.git
 ```
 
 This will build your application and put the resulting bundle into the project's
