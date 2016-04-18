@@ -9,13 +9,6 @@ Currently Maka was created from  a need for compatibility for Meteor 1.3.1.
 
 It automatically creates project structure, files and boilerplate code.
 
-
-Maka's immediate goal is to bring WebComponents to the cli generation.  Ideally, you'll be able
-to invoke:
-```
-$ maka g:component <component-name>
-```
-
 ## Installation
 Install the maka command line tool globally so you can use it from any project directory.
 
