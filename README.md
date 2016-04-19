@@ -80,6 +80,12 @@ $ maka g:package package:name
 
 ## Commands
 
+### Migrate from Iron-meteor
+In the app directory:
+```sh
+$ maka migrate
+```
+
 ### Create an Application
 ```sh
 $ maka create my-app
@@ -95,6 +101,8 @@ The following parameters can be specified:
 --skip-route-template
 --skip-generator-comments
 ```
+
+
 
 ### Run Your Application
 ```sh
