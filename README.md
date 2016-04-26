@@ -188,12 +188,44 @@ maka mup <environment> --setup
 ### Deploy Your Application on Heroku
 Maka projects require buildpacks to look for the app in /app/ in addition to the root for deployments to work. Currently there is a patched version of the Horse buildpack available that is compatible with Iron based projects. Use this fork until the patches has been added to the main Horse repo.
 
+Initialize the git repo
+```sh
+$ git init
+$ git add .
+$ git commit -m 'init'
+```
+
+Create the heroku app:
+```sh
+$ heroku create <app-name>
+```
+
+Setup the build pack
+
 ```sh
 $ heroku buildpacks:set https://github.com/alykoshin/meteor-buildpack-horse-1202-fixed.git
 ```
 
 This will build your application and put the resulting bundle into the project's
 build folder.
+
+Setup MongoDB
+```sh
+$heroku addons:create mongolab
+```
+Configure your ROOT_URL
+```sh
+$ heroku config:set ROOT_URL=https://<app-name>.herokuapp.com
+```
+Depoy to heroku
+```sh
+$ git push heroku master
+```
+
+Enable sticky session-support
+```sh
+$ heroku labs:enable http-session-affinity
+```
 
 ## Meteor Commands
 Meteor commands will automatically be proxied to the meteor command line tool.
