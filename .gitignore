@@ -2,3 +2,5 @@ node_modules/
 npm-debug.log
 test/integration/out
 test/dummy
+*.swp
+*.swo
