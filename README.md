@@ -232,6 +232,11 @@ Enable sticky session-support
 $ heroku labs:enable http-session-affinity
 ```
 
+Set your settings path
+```sh
+$ heroku config:add METEOR_SETTINGS="$(cat config/production/settings.json)"
+```
+
 ## Meteor Commands
 Meteor commands will automatically be proxied to the meteor command line tool.
 
