@@ -203,7 +203,7 @@ $ heroku create <app-name>
 Setup the build pack
 
 ```sh
-$ heroku buildpacks:set https://github.com/alykoshin/meteor-buildpack-horse-1202-fixed.git
+$ heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
 ```
 
 Configure your production settings
