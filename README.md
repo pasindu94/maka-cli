@@ -192,6 +192,11 @@ Maka projects require buildpacks to look for the app in /app/ in addition to the
 $ heroku buildpacks:set https://github.com/alykoshin/meteor-buildpack-horse-1202-fixed.git
 ```
 
+Configure your production settings
+```sh
+$ heroku config:add METEOR_SETTINGS="$(cat config/production/settings.json)"
+```
+
 This will build your application and put the resulting bundle into the project's
 build folder.
 
