@@ -206,11 +206,6 @@ Setup the build pack
 $ heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
 ```
 
-Configure your production settings
-```sh
-$ heroku config:add METEOR_SETTINGS="$(cat config/production/settings.json)"
-```
-
 This will build your application and put the resulting bundle into the project's
 build folder.
 
