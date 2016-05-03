@@ -50,7 +50,7 @@ my-app/
      env.sh
      settings.json
  app/
-   imports/			# Not loaded by Meteor, must be explicitly loaded
+   imports/		# Not loaded by Meteor, must be explicitly loaded via imports
    	 startup/
    	   client/
    	     index.js	# Meteor 1.3 client lazy load list
