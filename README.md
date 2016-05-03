@@ -43,12 +43,20 @@ my-app/
      env.sh
      settings.json
  app/
+   imports/			# Not loaded by Meteor, must be explicitly loaded
+   	 startup/
+   	   client/
+   	     index.js	# Meteor 1.3 client lazy load list
+   	   server/
+   	     index.js	# Meteor 1.3 server lazy load list
+   	     fixtures.js
    client/
      collections/
      lib/
      stylesheets/
      templates/
      head.html
+     main.js	# Meteor 1.3 client module insertion point
    lib/
      collections/
      controllers/
@@ -63,6 +71,7 @@ my-app/
      methods.js
      publish.js
      bootstrap.js
+     main.js 	# Meteor 1.3 server module insertion point
 ```
 
 ## Generators
