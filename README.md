@@ -1,7 +1,14 @@
 # maka
 
 Meteor Apps Kick Ass! (maka)
-    
+
+---
+### Update 1.1.0
+It's important to stay current with the Meteor file structure.  So with 1.3, I've included some of the lazy loaded ```imports/``` directory.  To start, and to keep things simple, only the ```imports/startup/``` with their build files (```server/index.js``` and ```client/index.js```) and the insertion points of ```app/client/main.js``` and ```app/server/main.js``` are included.
+
+What this provides is more fine grained module imports.  See the official meteor [docs](http://guide.meteor.com/structure.html#example-app-structure) for more info.
+ 
+---
 Maka is a command line scaffolding tool for Meteor applications. Maka has been
 adapted from EventedMind's iron-meteor.
 
@@ -43,12 +50,20 @@ my-app/
      env.sh
      settings.json
  app/
+   imports/			# Not loaded by Meteor, must be explicitly loaded
+   	 startup/
+   	   client/
+   	     index.js	# Meteor 1.3 client lazy load list
+   	   server/
+   	     index.js	# Meteor 1.3 server lazy load list
+   	     fixtures.js
    client/
      collections/
      lib/
      stylesheets/
      templates/
      head.html
+     main.js	# Meteor 1.3 client module insertion point
    lib/
      collections/
      controllers/
@@ -63,6 +78,7 @@ my-app/
      methods.js
      publish.js
      bootstrap.js
+     main.js 	# Meteor 1.3 server module insertion point
 ```
 
 ## Generators
