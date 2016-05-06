@@ -63,7 +63,7 @@ my-app/
      stylesheets/
      templates/
      head.html
-     main.js	# Meteor 1.3 client module insertion point
+     main.js	# Files loaded LAST
    lib/
      collections/
      controllers/
@@ -78,7 +78,7 @@ my-app/
      methods.js
      publish.js
      bootstrap.js
-     main.js 	# Meteor 1.3 server module insertion point
+     main.js 	# Files loaded LAST
 ```
 
 ## Generators
