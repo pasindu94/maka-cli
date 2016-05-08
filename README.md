@@ -3,6 +3,28 @@
 Meteor Apps Kick Ass! (maka)
 
 ---
+
+### Update 1.1.37
+
+Meteor 1.3 tests made simple.  I chose to use Jasmine, but you can use any driver package you like.
+
+This makes running tests in Meteor 1.3 super simple.  It uses velocity html reporter and console reporter.
+
+Simply run the following to invoke testing with jasmine with all your env settings.
+
+```sh
+$ maka --test
+```
+
+This may be used with --env to test prod settings as well as other options such as --port:
+
+```sh
+$ maka --test --env production --port 3010
+```
+
+You'll still need to write your tests directory and do all that, but I should have some scaffolding in place for that sometime soon.
+
+---
 ### Update 1.1.0
 It's important to stay current with the Meteor file structure.  So with 1.3, I've included some of the lazy loaded ```imports/``` directory.  To start, and to keep things simple, only the ```imports/startup/``` with their build files (```server/index.js``` and ```client/index.js```) and the insertion points of ```app/client/main.js``` and ```app/server/main.js``` are included.
 
