@@ -2,17 +2,13 @@
 
 Meteor Apps Kick Ass! (maka)
 
+Maka is a command line scaffolding tool for Meteor applications. Maka has been
+adapted from EventedMind's iron-meteor to be compatible with Meteor 1.3.x.
+
+It automatically creates project structure, files and boilerplate code.  You may use maka where ever you use meteor.
+
+
 ### Update 1.1.39
-Testing packages in isolation with jasmine has also been added:
-
-```sh
-$ maka --test-package package-name
-```
-
----
-
-### Update 1.1.37
-
 Meteor 1.3 tests made simple.  I chose to use Jasmine, but you can use any driver package you like.
 
 This makes running tests in Meteor 1.3 super simple.  It uses velocity html reporter and console reporter.
@@ -29,27 +25,21 @@ This may be used with --env to test prod settings as well as other options such 
 $ maka --test --env production --port 3010
 ```
 
-You'll still need to write your tests directory and do all that, but I should have some scaffolding in place for that sometime soon.
+Testing packages in isolation with jasmine has also been added:
 
+```sh
+$ maka --test-package package-name
+```
 
 To prevent the install of this testing package use the param:
 ```sh
 $ maka create package-name --skip-jasmine
 ```
 
----
-### Update 1.1.0
-It's important to stay current with the Meteor file structure.  So with 1.3, I've included some of the lazy loaded ```imports/``` directory.  To start, and to keep things simple, only the ```imports/startup/``` with their build files (```server/index.js``` and ```client/index.js```) and the insertion points of ```app/client/main.js``` and ```app/server/main.js``` are included.
-
-What this provides is more fine grained module imports.  See the official meteor [docs](http://guide.meteor.com/structure.html#example-app-structure) for more info.
- 
----
-Maka is a command line scaffolding tool for Meteor applications. Maka has been
-adapted from EventedMind's iron-meteor.
-
-Currently Maka was created from  a need for compatibility for Meteor 1.3.1.
-
-It automatically creates project structure, files and boilerplate code.
+If you don't have jasmine, and would like it in your existing app:
+```sh
+$ maka add sanjo:jasmine, and velocity:html-reporter.
+```
 
 ## Installation
 Install the maka command line tool globally so you can use it from any project directory.
@@ -216,26 +206,6 @@ Use `maka mup` to run Meteor Up commands. To create a `mup.json` file for an env
 maka mup <environment> --init
 ```
 
-**IMPORTANT**
-
-Your `mup.json` file must contain `"enableUploadProgressBar": false` to work with Maka.
-
-#### Create Meteor Up Server
-After [configuring](https://github.com/arunoda/meteor-up/#example-file) `mup.json`, the server can be bootstrapped with a single command:
-
-```sh
-maka mup <environment> --setup
-```
-
-#### Deploy to Meteor Up Envmakament
-```
-  'maka mup development' //deploy to development environment
-  'maka mup dev' // shortcut for development
-  'maka mup production'
-  'maka mup prod'
-  'maka mup <custom-from-config>'
-```
-
 ### Deploy Your Application on Heroku
 Maka projects require buildpacks to look for the app in /app/ in addition to the root for deployments to work. Currently there is a patched version of the Horse buildpack available that is compatible with Iron based projects. Use this fork until the patches has been added to the main Horse repo.
 
@@ -286,14 +256,6 @@ $ heroku config:add METEOR_SETTINGS="$(cat config/production/settings.json)"
 ## Meteor Commands
 Meteor commands will automatically be proxied to the meteor command line tool.
 
-## Contributing
-Contributions and ideas are welcome.
-
-## Tests
-To run tests
-```sh
-npm test
-```
 
 ## License
 MIT
