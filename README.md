@@ -38,7 +38,7 @@ $ maka create package-name --skip-jasmine
 
 If you don't have jasmine, and would like it in your existing app:
 ```sh
-$ maka add sanjo:jasmine, and velocity:html-reporter.
+$ maka add sanjo:jasmine velocity:html-reporter.
 ```
 
 ## Installation
