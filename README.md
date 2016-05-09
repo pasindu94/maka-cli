@@ -2,6 +2,13 @@
 
 Meteor Apps Kick Ass! (maka)
 
+### Update 1.1.39
+Testing packages in isolation with jasmine has also been added:
+
+```sh
+$ maka --test-package package-name
+```
+
 ---
 
 ### Update 1.1.37
@@ -23,6 +30,12 @@ $ maka --test --env production --port 3010
 ```
 
 You'll still need to write your tests directory and do all that, but I should have some scaffolding in place for that sometime soon.
+
+
+To prevent the install of this testing package use the param:
+```sh
+$ maka create package-name --skip-jasmine
+```
 
 ---
 ### Update 1.1.0
