@@ -37,7 +37,7 @@ $ maka --test --env production --port 3010
 Testing packages in isolation with jasmine has also been added:
 
 ```sh
-$ maka --test-package package-name
+$ maka --test-packages package-name
 ```
 
 To prevent the install of this testing package use the param:
