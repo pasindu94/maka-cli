@@ -7,6 +7,15 @@ adapted from EventedMind's iron-meteor to be compatible with Meteor 1.3.x.
 
 It automatically creates project structure, files and boilerplate code.  You may use maka where ever you use meteor.
 
+### Update 1.1.48
+
+```sh
+$ maka g:package new-package
+```
+
+Will now allow modules
+
+
 
 ### Update 1.1.39
 Meteor 1.3 tests made simple.  I chose to use Jasmine, but you can use any driver package you like.
