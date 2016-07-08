@@ -30,6 +30,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+### Update 1.2.0
+
+This version updates the collections scaffolding.  From the beginning of Meteor we've had to place collections as a global variable.  Now that Meteor 1.3 has support for export/import, we should be exporting the collections explicitly as constants.
+
+No longer will ``` maka g:collection Todo ``` place the collection in the ```/app/lib``` directory.
+
+Collections will now be placed by default in the ```/app/imports/startup/lib/collections``` directory and automatically exported and imported explicitly into the app.
+
+Please note that for existing applications the first time you create a collection a file will be added: ```/app/lib/main.js``` that will explicitly import all of the ```/app/imports/lib``` directory.
+
+Defining server or client side collections will also still work. (i.e. ```maka g:col Todo --where "server"```)
+
+I know this isn't completely in line with the Meteor 1.3 application structure.  Many projects still use 1.2, and this is an effort to bring Maka closer to 1.3 while still keeping 1.2 applications relevant.
 
 ### Update 1.1.48
 
@@ -227,16 +240,15 @@ The following configuration options are supported in `config.json`:
 
 ```
 "mup": {
-  "version": "mup" or "mupx",
   "environment": "/path/to/environment"
 }
 ```
 
 #### Initialize Meteor Up
-Use `maka mup` to run Meteor Up commands. To create a `mup.json` file for an environment run:
+Use `maka mupx` to run Meteor Up commands. To create a `mup.json` file for an environment run:
 
 ```sh
-maka mup <environment> --init
+maka mupx <environment> --init
 ```
 
 ### Deploy Your Application on Heroku
