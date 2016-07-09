@@ -7,28 +7,13 @@ adapted from EventedMind's iron-meteor to be compatible with Meteor 1.3.x.
 
 It automatically creates project structure, files and boilerplate code.  You may use maka where ever you use meteor.
 
-## License
+## Installation
+Install the maka command line tool globally so you can use it from any project directory.
 
-The MIT License (MIT)
-Copyright (C) 2016 Matthew Campbell
+```sh
+$ npm install -g maka-cli
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 
 ### Update 1.2.0
 
@@ -44,55 +29,6 @@ Defining server or client side collections will also still work. (i.e. ```maka g
 
 I know this isn't completely in line with the Meteor 1.3 application structure.  Many projects still use 1.2, and this is an effort to bring Maka closer to 1.3 while still keeping 1.2 applications relevant.
 
-### Update 1.1.48
-
-```sh
-$ maka g:package new-package
-```
-
-Will now allow modules
-
-
-
-### Update 1.1.39
-Meteor 1.3 tests made simple.  I chose to use Jasmine, but you can use any driver package you like.
-
-This makes running tests in Meteor 1.3 super simple.  It uses velocity html reporter and console reporter.
-
-Simply run the following to invoke testing with jasmine with all your env settings.
-
-```sh
-$ maka --test
-```
-
-This may be used with --env to test prod settings as well as other options such as --port:
-
-```sh
-$ maka --test --env production --port 3010
-```
-
-Testing packages in isolation with jasmine has also been added:
-
-```sh
-$ maka --test-packages package-name
-```
-
-To prevent the install of this testing package use the param:
-```sh
-$ maka create package-name --skip-jasmine
-```
-
-If you don't have jasmine, and would like it in your existing app:
-```sh
-$ maka add sanjo:jasmine velocity:html-reporter.
-```
-
-## Installation
-Install the maka command line tool globally so you can use it from any project directory.
-
-```sh
-$ npm install -g maka-cli
-```
 
 ## Usage
 Use the `help` command to get a list of the top level commands.
@@ -105,64 +41,6 @@ Use the `g` command to see a list of generators.
 
 ```
 $ maka g
-```
-
-## Directory Structure
-The application will have the following directory structure:
-
-```sh
-my-app/
- .maka/
-   config.json
- bin/
- build/
- config/
-   development/
-     env.sh
-     settings.json
- app/
-   imports/		# Not loaded by Meteor, must be explicitly loaded via imports
-   	 startup/
-   	   client/
-   	     index.js	# Meteor 1.3 client lazy load list
-   	   server/
-   	     index.js	# Meteor 1.3 server lazy load list
-   	     fixtures.js
-   client/
-     collections/
-     lib/
-     stylesheets/
-     templates/
-     head.html
-     main.js	# Files loaded LAST
-   lib/
-     collections/
-     controllers/
-     methods.js
-     routes.js
-   packages/
-   private/
-   public/
-   server/
-     collections/
-     lib/
-     methods.js
-     publish.js
-     bootstrap.js
-     main.js 	# Files loaded LAST
-```
-
-## Generators
-```sh
-$ maka g:scaffold todos
-$ maka g:template todos/todo_item
-$ maka g:collection todos
-$ maka g:route webhooks/stripe --where "server"
-$ maka g:controller todos/show_todo
-$ maka g:route todos/show_todo --action "show"
-$ maka g:publish todos
-$ maka g:stylesheet main
-$ maka g:package package:name
 ```
 
 ## Commands
@@ -189,8 +67,6 @@ The following parameters can be specified:
 --skip-generator-comments
 ```
 
-
-
 ### Run Your Application
 ```sh
 $ maka run
@@ -199,6 +75,46 @@ $ maka run
 or just
 ```sh
 $ maka
+```
+
+### Generators
+```sh
+$ maka g:scaffold todos
+$ maka g:template todos/todo_item
+$ maka g:collection todos
+$ maka g:route webhooks/stripe --where "server"
+$ maka g:controller todos/show_todo
+$ maka g:route todos/show_todo --action "show"
+$ maka g:publish todos
+$ maka g:stylesheet main
+$ maka g:package package:name
+```
+
+## Testing
+```sh
+$ maka --test
+```
+
+This may be used with --env to test prod settings as well as other options such as --port:
+
+```sh
+$ maka --test --env production --port 3010
+```
+
+Testing packages in isolation with jasmine has also been added:
+
+```sh
+$ maka --test-packages package-name
+```
+
+To prevent the install of this testing package use the param:
+```sh
+$ maka create package-name --skip-jasmine
+```
+
+If you don't have jasmine, and would like it in your existing app:
+```sh
+$ maka add sanjo:jasmine velocity:html-reporter.
 ```
 
 This will automatically load your config/development/env.sh and config/development/settings.json files.
@@ -298,9 +214,124 @@ Set your settings path
 $ heroku config:add METEOR_SETTINGS="$(cat config/production/settings.json)"
 ```
 
-## Meteor Commands
-Meteor commands will automatically be proxied to the meteor command line tool.
+## Deploy Meteor App on CentOS
+```sh
+$ maka build --architecture os.linux.x86_32
+or
+$ maka build --architecture os.linux.x86_64
+
+Copy the build to it's final home on the CentOS box.
+
+Update Yum:
+	$ yum -y update
+
+    Install EPEL
+    $ yum -y install epel-release
+
+    Install NodeJS and Npm:
+    $ yum -y install nodejs npm
+
+    Verify Node Version
+    $ node --version
+
+    Install MongoDB
+    	1. Add the MongoDB Yum repo by editing mongodb.repo and adding in the definition:
+    	$ vim /etc/yum.repos.d/mongodb.repo
+
+            [mongodb]
+            name=MongoDB repo
+            baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
+            gpgcheck=0
+            enabled=1
+
+        2. Install the MongoDB packages
+            $ yum install mongodb-org
+
+        3. Start MongoDB
+            $ chkconfig mongod on
+            $ service mongod start
+
+
+The following environment variables should be modified to suit your needs.
+$ export MONGO_URL='mongodb://localhost:27017/<dbName>'
+$ export ROOT_URL='http://localhost'
+$ export MAIL_URL='smtp://user:password@mailhost:port/'
+$ export PORT=3000
+
+$ (cd programs/server && npm install)
+
+$ (cd to bundle root)
+$ node main.js
+
+```
+## Directory Structure
+The application will have the following directory structure:
+
+```sh
+my-app/
+ .maka/
+   config.json
+ bin/
+ build/
+ config/
+   development/
+     env.sh
+     settings.json
+ app/
+   imports/		# Not loaded by Meteor, must be explicitly loaded via imports
+   	 startup/
+   	   client/
+   	     index.js	# Meteor 1.3 client lazy load list
+   	   lib/
+   	   	 index.js	# Meteor 1.3 client lazy load list
+   	   server/
+   	     index.js	# Meteor 1.3 server lazy load list
+   	     fixtures.js
+   client/
+     collections/
+     lib/
+     stylesheets/
+     templates/
+     head.html
+     main.js	# Files loaded LAST
+   lib/
+     collections/
+     controllers/
+     methods.js
+     routes.js
+   packages/
+   private/
+   public/
+   server/
+     collections/
+     lib/
+     methods.js
+     publish.js
+     bootstrap.js
+     main.js 	# Files loaded LAST
+```
 
 
 ## License
-MIT
+
+The MIT License (MIT)
+Copyright (C) 2016 Matthew Campbell
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
