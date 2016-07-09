@@ -198,6 +198,10 @@ $heroku addons:create mongolab
 Configure your ROOT_URL
 ```sh
 $ heroku config:set ROOT_URL=https://<app-name>.herokuapp.com
+
+or, if you have DNS setup
+
+$ heroku config:set ROOT_URL=https://www.<domain-name>.com
 ```
 Depoy to heroku
 ```sh
