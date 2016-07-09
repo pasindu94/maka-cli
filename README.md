@@ -224,7 +224,7 @@ $ maka build --architecture os.linux.x86_32
 or
 $ maka build --architecture os.linux.x86_64
 
-Copy the build to it's final home on the CentOS box.
+Copy the build to its final home on the CentOS box.
 
 Update Yum:
 	$ yum -y update
