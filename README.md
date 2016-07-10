@@ -14,6 +14,19 @@ Install the maka command line tool globally so you can use it from any project d
 $ npm install -g maka-cli
 ```
 
+### Update 1.3.0
+I'm happy to announce that a new scaffolding generator has been released! This version brings in:
+
+```  maka g:api Todos ``` 
+
+What this will do is scaffold out an api "concept" that is closely aligned with Meteor 1.3 application
+structure.  All the files generated will be located in the ``` /app/imports/api/<concept> ``` directory.
+
+You will need to edit the methods.js, publications.js and api.js to explicitly expose the methods, publications and CRUD.
+
+I encourage you to take a look at the Meteor Guide's application structure section for more information:
+https://guide.meteor.com/structure.html
+
 
 ### Update 1.2.0
 
