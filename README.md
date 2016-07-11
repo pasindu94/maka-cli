@@ -13,9 +13,11 @@ Install the maka command line tool globally so you can use it from any project d
 ```sh
 $ npm install -g maka-cli
 ```
-### NOTICE
+## NOTICE
+### Update 2.0.0
+
 Maka version 2.0.0 HAS ARRIVED!
-With it will brings FlowRouter as the default client side router and Restivus as the default server side router.
+With it will brings FlowRouter as the default client side router and Restivus as the default server side router.  Version 2 "nearly" brings maka-cli inline with Meteor 1.3 guides and tutorials and embraces the ES6 standards of imports/exports.
 
 This is a breaking change, and projects that still use IronRouter will not work well with maka v2.
 
