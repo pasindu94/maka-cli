@@ -84,13 +84,11 @@ $ maka create my-app
 
 The following parameters can be specified:
 ```
---skip-template-css=true|false
---skip-template-js=true|false
---skip-template-html=true|false
---skip-iron-router
---skip-route-controller
---skip-route-template
---skip-generator-comments
+--skip-template-css=true|false       Don't generate CSS files when templates are made.
+--skip-template-js=true|false        Don't generate JS files when templates are made.
+--skip-template-html=true|false      Don't generate HTML files when templates are made.
+--skip-flow-router                   Don't install flow-router. (route generators will be disabled in maka-cli)
+--skip-route-template                Don't create templates with route generators.
 ```
 
 ### Run Your Application
@@ -108,9 +106,9 @@ $ maka
 $ maka g:scaffold todos
 $ maka g:template todos/todo_item
 $ maka g:collection todos
-$ maka g:route webhooks/stripe --where "server"
-$ maka g:controller todos/show_todo
-$ maka g:route todos/show_todo --action "show"
+$ maka g:route webhooks/stripe
+$ maka g:route todos/show todos/:id
+$ maka g:route todos/edit todos/:id/edit
 $ maka g:publish todos
 $ maka g:stylesheet main
 $ maka g:package package:name
@@ -298,47 +296,57 @@ $ node main.js
 The application will have the following directory structure:
 
 ```sh
-my-app/
- .maka/
-   config.json
- bin/
- build/
- config/
-   development/
-     env.sh
-     settings.json
- app/
-   imports/		# Not loaded by Meteor, must be explicitly loaded via imports
-   	 startup/
-   	   client/
-   	     index.js	# Meteor 1.3 client lazy load list
-   	   lib/
-   	   	 index.js	# Meteor 1.3 client lazy load list
-   	   server/
-   	     index.js	# Meteor 1.3 server lazy load list
-   	     fixtures.js
-   client/
-     collections/
-     lib/
-     stylesheets/
-     templates/
-     head.html
-     main.js	# Files loaded LAST
-   lib/
-     collections/
-     controllers/
-     methods.js
-     routes.js
-   packages/
-   private/
-   public/
-   server/
-     collections/
-     lib/
-     methods.js
-     publish.js
-     bootstrap.js
-     main.js 	# Files loaded LAST
+my-app
+├── app
+│   ├── client
+│   │   ├── collections                    
+│   │   ├── head.html                      # Define your HTML heading here
+│   │   ├── lib
+│   │   ├── main.js                        # This is automatically loaded by meteor
+│   │   └── stylesheets
+│   ├── imports
+│   │   ├── api                            # API Definitions go here
+│   │   ├── startup
+│   │   │   ├── client
+│   │   │   │   ├── collections.js         # Collections are loaded from here
+│   │   │   │   ├── index.js               # Client startup
+│   │   │   │   ├── routes.js              # Flow-router routes are loaded here
+│   │   │   │   └── templates.js           # page templates are loaded here
+│   │   │   ├── lib
+│   │   │   │   └── index.js
+│   │   │   └── server
+│   │   │       ├── fixtures.js            # Fixtures and server-specific logic
+│   │   │       ├── index.js
+│   │   │       └── register-api.js        # Server-only API are loaded here (publish methods)
+│   │   └── ui
+│   │       ├── components                 # Reusable UI component templates go here
+│   │       ├── layouts
+│   │       │   └── master-layouts
+│   │       │       ├── master-layout.html # Define the master layout here
+│   │       │       └── master-layout.js
+│   │       └── pages                      # Application pages
+│   │           ├── default.html
+│   │           └── default.js
+│   ├── lib
+│   │   ├── main.js
+│   │   └── methods.js
+│   ├── packages
+│   ├── private
+│   ├── public
+│   └── server
+│       ├── main.js
+│       └── methods.js
+├── bin
+├── build
+│   └── README
+└── config
+    ├── development
+    │   ├── env.sh
+    │   └── settings.json
+    └── production
+        ├── env.sh
+        └── settings.json
+
 ```
 
 
