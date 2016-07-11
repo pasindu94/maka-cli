@@ -13,6 +13,19 @@ Install the maka command line tool globally so you can use it from any project d
 ```sh
 $ npm install -g maka-cli
 ```
+### NOTICE
+Maka version 2.0.0 will be arriving soon, and with it will bring FlowRouter as the default client side router.  Restivus will be the default server side router.
+
+This is a breaking change, and projects that still use IronRouter will not work well with maka v2.
+
+I've created an npm package called "iron-maka"
+
+``` $ npm install -g iron-maka ```
+
+This package will forever stay in version 1.x.x and you may use it as ``` $ iron-maka``` where ever you used maka.
+
+There will be very minimal support for iron-maka, but as I do have a lot of projects that run on iron router, it's in my self interest to keep it working :D
+
 
 ### Update 1.3.0
 I'm happy to announce that a new scaffolding generator has been released! This version brings in:
