@@ -7,6 +7,8 @@ adapted from EventedMind's iron-meteor to be compatible with Meteor 1.3.x.
 
 It automatically creates project structure, files and boilerplate code.  You may use maka where ever you use meteor.
 
+Maka works great on OSX, Linux, and Windows.
+
 ## Installation
 Install the maka command line tool globally so you can use it from any project directory.
 
