@@ -1,4 +1,4 @@
-# maka v2
+# maka
 
 Meteor Apps Kick Ass! (maka)
 
@@ -304,11 +304,8 @@ The application will have the following directory structure:
 my-app
 ├── app
 │   ├── client
-│   │   ├── collections                    
 │   │   ├── head.html                      # Define your HTML heading here
-│   │   ├── lib
 │   │   ├── main.js                        # This is automatically loaded by meteor
-│   │   └── stylesheets
 │   ├── imports
 │   │   ├── api                            # API Definitions go here
 │   │   ├── startup
@@ -330,17 +327,16 @@ my-app
 │   │       │       ├── master-layout.html # Define the master layout here
 │   │       │       └── master-layout.js
 │   │       └── pages                      # Application pages
-│   │           ├── default.html
-│   │           └── default.js
+│   │           ├── home.html
+│   │           ├── home.css
+│   │           └── home.js
 │   ├── lib
 │   │   ├── main.js
-│   │   └── methods.js
 │   ├── packages
 │   ├── private
 │   ├── public
 │   └── server
-│       ├── main.js
-│       └── methods.js
+│       └── main.js
 ├── bin
 ├── build
 │   └── README
