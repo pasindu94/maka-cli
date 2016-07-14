@@ -110,6 +110,7 @@ $ maka
 ```sh
 $ maka g:scaffold todos
 $ maka g:template todos/todo_item
+$ maka g:api cars
 $ maka g:collection todos
 $ maka g:route webhooks/stripe
 $ maka g:route todos/show todos/:id
