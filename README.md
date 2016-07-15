@@ -9,6 +9,10 @@ It automatically creates project structure, files and boilerplate code.  You may
 
 Maka works great on OSX, Linux, and Windows.
 
+Follow me on Twitter for up coming changes and post on suggestions you'd like to see!
+
+@maka_cli
+
 ## Installation
 Install the maka command line tool globally so you can use it from any project directory.
 
