@@ -132,15 +132,19 @@ $ maka
 ### Generators
 ```sh
 $ maka g:scaffold todos
-$ maka g:template todos/todo_item
+$ maka g:template todos/todo_item [--layout] [--component] # no route
 $ maka g:api cars
 $ maka g:collection todos
-$ maka g:route webhooks/stripe
+$ maka g:route webhooks/stripe				# also creates a page template
 $ maka g:route todos/show todos/:id
 $ maka g:route todos/edit todos/:id/edit
 $ maka g:publish todos
 $ maka g:stylesheet main
-$ maka g:package package:name
+$ maka g:package username:packageName
+$ maka g:package packageName
+
+Help:
+$ maka g 
 ```
 
 ## Testing
