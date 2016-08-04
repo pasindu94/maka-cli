@@ -17,6 +17,9 @@ Install the maka command line tool globally so you can use it from any project d
 $ npm install -g maka-cli
 ```
 ## NOTICE
+### Update 2.1.0
+I've added in scaffolding for the ``` maka g:api ``` generator to include a concept related test.  So, if you ``` maka g:api Cars ``` you'll see a ``` ./api/cars/cars.app-tests.js ``` file with minimal stubs for tests.  To see the tests running, run your application in test mode ``` maka --tests ```.  I've also include the UI ``` test-helpers.js ``` that goes along with the Meteor Guide to start everyone off on testing UI pages/layouts/components.  Please refer to the meteor testing guide for more information. [Meteor.com](https://guide.meteor.com/testing.html)
+
 ### Update 2.0.0
 
 Maka version 2.0.0 HAS ARRIVED!
@@ -36,10 +39,29 @@ There will be very minimal support for iron-maka, but as I do have a lot of proj
 ### Update 1.3.0
 I'm happy to announce that a new scaffolding generator has been released! This version brings in:
 
-```  maka g:api Todos ``` 
+```  maka g:api Trucks ``` 
 
 What this will do is scaffold out an api "concept" that is closely aligned with Meteor 1.3 application
 structure.  All the files generated will be located in the ``` /app/imports/api/<concept> ``` directory.
+
+
+``` 
+├── app
+│   ├── client
+│   │   ├── head.html
+│   │   └── main.js
+│   ├── imports
+│   │   ├── api
+│   │   │   └── trucks					# Concept
+│   │   │       ├── api.js				# RESTFull CRUD
+│   │   │       ├── fixtures.js			# Startup functions
+│   │   │       ├── methods.js			# Client callable server functions
+│   │   │       ├── server				# ...directory may be removed
+│   │   │       │   └── publications.js   # Broadcast these items to client
+│   │   │       ├── trucks.app-tests.js   # Simple test stub
+│   │   │       └── trucks.js			    # The Trucks collection
+
+```
 
 You will need to edit the methods.js, publications.js and api.js to explicitly expose the methods, publications and CRUD.
 
