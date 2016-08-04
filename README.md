@@ -53,7 +53,7 @@ structure.  All the files generated will be located in the ``` /app/imports/api/
 │   ├── imports
 │   │   ├── api
 │   │   │   └── trucks					# Concept
-│   │   │       ├── api.js				# RESTFull CRUD
+│   │   │       ├── api.js				# RESTFul CRUD
 │   │   │       ├── fixtures.js			# Startup functions
 │   │   │       ├── methods.js			# Client callable server functions
 │   │   │       ├── server				# ...directory may be removed
