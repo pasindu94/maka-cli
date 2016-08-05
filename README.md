@@ -11,6 +11,16 @@ It automatically creates project structure, files and boilerplate code.  You may
 Maka works great on OSX, Linux, and Windows.
 
 ## Installation
+Make sure Meteor is installed:
+
+Linux & OSX
+```sh
+$ curl https://install.meteor.com/ | sh
+```
+
+Windows:
+[Download Installer](https://install.meteor.com/windows)
+
 Install the maka command line tool globally so you can use it from any project directory.
 
 ```sh
