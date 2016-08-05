@@ -329,44 +329,55 @@ $ node main.js
 The application will have the following directory structure:
 
 ```sh
-my-app
+.
 ├── app
 │   ├── client
-│   │   ├── head.html                      # Define your HTML heading here
-│   │   ├── main.js                        # This is automatically loaded by meteor
-│   ├── imports
-│   │   ├── api                            # API Definitions go here
-│   │   ├── startup
+│   │   ├── head.html					 # The <head> tag
+│   │   └── main.js  					 # The entry point for imports/ui
+│   ├── imports      					 # Lazy loaded files live here
+│   │   ├── api      					 # Server concept logic
+│   │   │   └── todos					 # "maka g:api todos"
+│   │   │       ├── api.js   			 # RESTFul endpoints (restivus)
+│   │   │       ├── fixtures.js 		 # Preload data
+│   │   │       ├── methods.js   		 # Client invoked Server functions.
+│   │   │       ├── publications.js  	 # Broadcasted sets of data
+│   │   │       ├── todos.app-tests.js
+│   │   │       └── todos.js    		 # Collection
+│   │   ├── startup  					 
 │   │   │   ├── client
-│   │   │   │   ├── collections.js         # Collections are loaded from here
-│   │   │   │   ├── index.js               # Client startup
-│   │   │   │   ├── routes.js              # Flow-router routes are loaded here
-│   │   │   │   └── templates.js           # page templates are loaded here
+│   │   │   │   ├── index.js
+│   │   │   │   ├── routes.js   		 # FlowRouter routes
+│   │   │   │   └── templates.js     	 # Registers templates from ui/
 │   │   │   ├── lib
 │   │   │   │   └── index.js
 │   │   │   └── server
-│   │   │       ├── fixtures.js            # Fixtures and server-specific logic
 │   │   │       ├── index.js
-│   │   │       └── register-api.js        # Server-only API are loaded here (publish methods)
+│   │   │       └── register-todos-api.js
 │   │   └── ui
-│   │       ├── components                 # Reusable UI component templates go here
-│   │       ├── layouts
-│   │       │   └── master-layouts
-│   │       │       ├── master-layout.html # Define the master layout here
+│   │       ├── components      		 # Reusable components
+│   │       │   └── header   			 # "maka g:t header --component"
+│   │       │       ├── header.css
+│   │       │       ├── header.html
+│   │       │       └── header.js
+│   │       ├── layouts      			 # Site layout
+│   │       │   └── master-layouts   	 # "maka g:t masterLayout --component" 
+│   │       │       ├── master-layout.html
 │   │       │       └── master-layout.js
-│   │       └── pages                      # Application pages
-│   │           ├── home.html
-│   │           ├── home.css
-│   │           └── home.js
+│   │       ├── pages       			 # "maka g:route home" or for no route:"maka g:t home" 
+│   │       │   └── home
+│   │       │       ├── home.css
+│   │       │       ├── home.html
+│   │       │       └── home.js
+│   │       └── test-helpers.js  		 # UI test helper function
 │   ├── lib
-│   │   ├── main.js
-│   ├── packages
-│   ├── private
-│   ├── public
+│   │   └── main.js     				 # The entry point for imports/lib
+│   ├── packages				      	 # "maka g:package [account:]package"
+│   ├── private          				 # Server accessible (only) files
+│   ├── public          				 # Globally accessible files
 │   └── server
-│       └── main.js
+│       └── main.js      				 # The entry point for imports/api
 ├── bin
-├── build
+├── build      		# "maka build --architecture [os.linux.x86_64] [os.linux.x86_32] [os.osx.x86_64] [os.windows.x86_32]"
 │   └── README
 └── config
     ├── development
@@ -375,6 +386,9 @@ my-app
     └── production
         ├── env.sh
         └── settings.json
+
+
+26 directories, 30 files
 
 ```
 
