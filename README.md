@@ -27,6 +27,11 @@ Install the maka command line tool globally so you can use it from any project d
 $ npm install -g maka-cli
 ```
 ## NOTICE
+### Update 2.1.6
+**** IMPORTANT ****
+Please review your collection code in the /imports/api.  Meteor.isClient is a mistake, and should not be there.  Change that to Meteor.isServer.
+Refer to this section in the Meteor guide:  [Security](https://guide.meteor.com/security.html#allow-deny).
+
 ### Update 2.1.0
 I've added in scaffolding for the ``` maka g:api ``` generator to include a concept related test.  So, if you ``` maka g:api Cars ``` you'll see a ``` ./api/cars/cars.app-tests.js ``` file with minimal stubs for tests.  To see the tests running, run your application in test mode ``` maka --tests ```.  I've also include the UI ``` test-helpers.js ``` that goes along with the Meteor Guide to start everyone off on testing UI pages/layouts/components.  Please refer to the meteor testing guide for more information. [Meteor.com](https://guide.meteor.com/testing.html)
 
