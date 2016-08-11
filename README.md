@@ -27,6 +27,15 @@ Install the maka command line tool globally so you can use it from any project d
 $ npm install -g maka-cli
 ```
 ## NOTICE
+### Update 2.1.10
+There was an issue released in the docker image meteord, where 1.4 does not build [issue 7475](https://github.com/arunoda/meteor-up/issues/1091).  Now, mupx is hard coded to use meteord/base, and both mupx and meteord are created by Kadira and so have not setup mupx to configure what docker image you want to use.  A PR is open for mupx that has sat around for a LONG time [PR #728](https://github.com/arunoda/meteor-up/pull/728).  Now that this is a breaking issue, I've forked mupx and applied @gdw2 PR to it.  You can replace mupx with maka-mupx: ``` npm uninstall -g mupx && npm install -g maka-mupx ```, then apply the option in your mupx.json with any docker image you want:
+
+```
+   "dockerImage": "abernix/meteord:base"
+```
+(this one fixes issue 7475 fyi)
+
+
 ### Update 2.1.6
 **** IMPORTANT ****
 Please review your collection code in the /imports/api.  Meteor.isClient is a mistake, and should not be there.  Change that to Meteor.isServer.
@@ -82,22 +91,6 @@ You will need to edit the methods.js, publications.js and api.js to explicitly e
 
 I encourage you to take a look at the Meteor Guide's application structure section for more information:
 https://guide.meteor.com/structure.html
-
-
-### Update 1.2.0
-
-This version updates the collections scaffolding.  From the beginning of Meteor we've had to place collections as a global variable.  Now that Meteor 1.3 has support for export/import, we should be exporting the collections explicitly as constants.
-
-No longer will ``` maka g:collection Todo ``` place the collection in the ```/app/lib``` directory.
-
-Collections will now be placed by default in the ```/app/imports/startup/lib/collections``` directory and automatically exported and imported explicitly into the app.
-
-Please note that for existing applications the first time you create a collection a file will be added: ```/app/lib/main.js``` that will explicitly import all of the ```/app/imports/lib``` directory.
-
-Defining server or client side collections will also still work. (i.e. ```maka g:col Todo --where "server"```)
-
-I know this isn't completely in line with the Meteor 1.3 application structure.  Many projects still use 1.2, and this is an effort to bring Maka closer to 1.3 while still keeping 1.2 applications relevant.
-
 
 ## Usage
 Use the `help` command to get a list of the top level commands.
