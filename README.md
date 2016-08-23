@@ -125,6 +125,7 @@ The following parameters can be specified:
 --skip-template-html=true|false      Don't generate HTML files when templates are made.
 --skip-flow-router                   Don't install flow-router. (route generators will be disabled in maka-cli)
 --skip-route-template                Don't create templates with route generators.
+--skip-testing                         Don't install testing packages (jasmine, html/console reporter, factory, etc)
 ```
 
 ### Run Your Application
