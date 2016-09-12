@@ -37,7 +37,7 @@ TypeScript has come to maka-cli!!!  You may now create an app using typescript i
 
 Meteor support for [Typings](https://github.com/typings/typings) is still a bit off from perfect, so you'll see some type warnings show up about various meteor packages.  The app will still run normally however.
 
-To ease some of the pain, @barbatus has create an awesome typings package.  To use it, you'll need to manually go into the ./app directory and issue the command:
+To ease some of the pain, @barbatus has created an awesome [TypeScript Compiler](https://github.com/barbatus/typescript).  To use it, you'll need to manually go into the ./app directory and issue the command:
 
 (First, make sure you have typings installed: ``` $ npm install -g typings ```
 
