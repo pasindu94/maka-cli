@@ -26,7 +26,29 @@ Install the maka command line tool globally so you can use it from any project d
 ```sh
 $ npm install -g maka-cli
 ```
+
 ## NOTICE
+### Update 2.2.0
+TypeScript has come to maka-cli!!!  You may now create an app using typescript instead of javascript using the "ts" flag for the --js engine:
+
+```
+	$ maka create Todos --js=ts
+```
+
+Meteor support for [Typings](https://github.com/typings/typings) is still a bit off from perfect, so you'll see some type warnings show up about various meteor packages.  The app will still run normally however.
+
+To ease some of the pain, @barbatus has create an awesome typings package.  To use it, you'll need to manually go into the ./app directory and issue the command:
+
+(First, make sure you have typings installed: ``` $ npm install -g typings ```
+
+```
+	$ typings install registry:env/meteor --global
+```
+
+These types will HELP, but you'll still see a lot of warnings in the server console.  If you're feeling spunky, you can add these types yourself and maybe share with the world!
+
+---
+
 ### Update 2.1.10
 There was an issue released in the docker image meteord, where 1.4 does not build [issue 7475](https://github.com/arunoda/meteor-up/issues/1091).  Now, mupx is hard coded to use meteord/base, and both mupx and meteord are created by Kadira and so have not setup mupx to configure what docker image you want to use.  A PR is open for mupx that has sat around for a LONG time [PR #728](https://github.com/arunoda/meteor-up/pull/728).  Now that this is a breaking issue, I've forked mupx and applied @gdw2 PR to it.  You can replace mupx with maka-mupx: ``` npm uninstall -g mupx && npm install -g maka-mupx ```, then apply the option in your mupx.json with any docker image you want:
 
