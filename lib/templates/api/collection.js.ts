@@ -24,7 +24,7 @@ class <%= name %>Collection extends Mongo.Collection {
     }
 }
 
-export const <%= name %> = new Mongo.Collection('<%= name %>');
+export const <%= name %> = new <%= name %>Collection('<%= name %>');
 
 if (Meteor.isServer) {
     <%= name %>.allow({
