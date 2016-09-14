@@ -2,11 +2,11 @@
 // route permissions, checkout:
 // https://github.com/kahmali/meteor-restivus/
 
+import { Meteor } from 'meteor/meteor';
 import { Restivus } from 'meteor/nimble:restivus';
-
 import { <%= name %> } from './<%= fileName %>.ts';
 
-let ApiV1 = new Restivus({
+const <%= name %>ApiV1 = new Restivus({
     version: 'v1',
     useDefaultAuth: true,
     prettyJson: (Meteor.isDevelopment) ? true : false
@@ -18,4 +18,4 @@ let ApiV1 = new Restivus({
 // Please review restivus documentation on how to harden endpoints.
 //
 // USE WITH CAUTION... can you imagine - $ maka g:api BankRecords
-//ApiV1.addCollection(<%= name %>);
+// <%= name %>ApiV1.addCollection(<%= name %>);
