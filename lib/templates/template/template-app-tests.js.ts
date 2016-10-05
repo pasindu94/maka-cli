@@ -2,7 +2,7 @@ import { Factory } from 'meteor/dburles:factory';
 import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 
-import { withRenderedTemplate } from '../../test-helpers.ts';
+import { withRenderedTemplate } from '/imports/ui/test-helpers.ts';
 
 if (Meteor.isClient) {
     // this import needs to be in the Meteor.isClient conditional

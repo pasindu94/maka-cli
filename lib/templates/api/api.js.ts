@@ -9,7 +9,7 @@ import { <%= name %> } from './<%= fileName %>.ts';
 const <%= name %>ApiV1 = new Restivus({
     version: 'v1',
     useDefaultAuth: true,
-    prettyJson: (Meteor.isDevelopment) ? true : false
+    prettyJson: Meteor.isDevelopment
 });
 
 // Representational State (REST) endpoints disabled by default.

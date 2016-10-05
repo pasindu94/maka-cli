@@ -13,46 +13,29 @@ class <%= name %>Collection extends Mongo.Collection {
     //  super.insert(doc);
     //
     insert(doc, callback) {
-        return doc;
+        const result = super.insert(doc, callback);
+        return result;
     }
 
     update(selector, callback) {
-        return selector;
+        const result = super.update(selector, modifier);
+        return result;
     }
 
     remove(selector) {
-        return selector;
+        const ourDoc = this.find(selector).fetch();
+        const result = super.remove(selector);
+        return result;
     }
 }
 
 export const <%= name %> = new <%= name %>Collection('<%= name %>');
 
-if (Meteor.isServer) {
-    <%= name %>.allow({
-        insert(userId, doc) {
-            return false;
-        },
+<%= name %>.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
 
-        update(userId, doc, fieldNames, modifier) {
-            return false;
-        },
-
-        remove(userId, doc) {
-            return false;
-        }
-    });
-
-    <%= name %>.deny({
-        insert(userId, doc) {
-            return true;
-        },
-
-        update(userId, doc, fieldNames, modifier) {
-            return true;
-        },
-
-        remove(userId, doc) {
-            return true;
-        }
-    });
-}
+<%= name %>.publicFields = {};
+<%= name %>.privateFields = {};
