@@ -1,17 +1,3 @@
-/**
- * Methods are highly app specific and as such Maka doesn't try
- * to implement any logic out of the box.  This file is simply to
- * provide a friendly reminder that you MAY need to have Methods.
- *
- * Also, it's a good idea to note that you may want to rate limit
- * your methods.
- *
- * Reference meteor's Todos app for more examples
- *
- * https://github.com/meteor/todos/blob/master/imports/api/lists/methods.js
- */
-
-/*
 import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter';
@@ -19,6 +5,26 @@ import { _ } from 'meteor/underscore';
 
 import { <%= name %> } from './<%= fileName %>.ts';
 
+/**
+ * Using ValidatedMethod (maintained by MDG) is the best
+ * practice by Meteor Development Group (MDG),
+ * and as such is used here to validate that method
+ * calls from the client are properly handled.
+ *
+ * All methods are disabled by default
+ * Uncomment the return of each methods to enable
+ */
+
+/**
+ * Client side insert method.
+ * *Disabled by default. Uncomment return of method to enable*
+ *
+ * @memberof Server.<%= name %>
+ * @method
+ * @property { string }     name        String that defines the method.
+ * @property { function }   validate    Is run before the main execution.
+ * @property { function }   run         The main action that is executed.
+ */
 const insert = new ValidatedMethod({
     name: '<%= fileName %>.insert',
     validate: null,
@@ -26,8 +32,17 @@ const insert = new ValidatedMethod({
         return <%= name %>.insert(doc);
     }
 });
-// Meteor.call('<%= fileName %>.insert', doc);
 
+/**
+ * Client side update method.
+ * *Disabled by default. Uncomment return of method to enable*
+ *
+ * @memberof Server.<%= name %>
+ * @method
+ * @property { string }     name        String that defines the method.
+ * @property { function }   validate    Is run before the main execution.
+ * @property { function }   run         The main action that is executed.
+ */
 const update = new ValidatedMethod({
     name: '<%= fileName %>.update',
     validate: null,
@@ -35,8 +50,17 @@ const update = new ValidatedMethod({
         return <%= name %>.update(docId, {$set: obj});
     }
 });
-// Meteor.call('<%= fileName %>.update', [docId, {}]);
 
+/**
+ * Client side remove method.
+ * *Disabled by default. Uncomment return of method to enable*
+ *
+ * @memberof Server.<%= name %>
+ * @method
+ * @property { string }     name        String that defines the method.
+ * @property { function }   validate    Is run before the main execution.
+ * @property { function }   run         The main action that is executed.
+ */
 const remove = new ValidatedMethod({
     name: '<%= fileName %>.remove',
     validate: null,
@@ -44,7 +68,6 @@ const remove = new ValidatedMethod({
         return <%= name %>.remove(docId);
     }
 });
-// Meteor.call('<%= fileName %>.remove', docId);
 
 const RATE_LIMITED_METHODS = _.pluck([
     insert, update, remove
@@ -63,4 +86,3 @@ if (Meteor.isServer) {
         connectionId() { return true; },
     }, OPERATIONS, PER_SECOND);
 }
-*/

@@ -1,3 +1,10 @@
-// This file is used to import all the templates into the project.
-// Add new templates to the project by importing them here.
+/**
+ * Blaze templates.
+ *  * Layouts: Top level UI concept, pages are rendered within.
+ *  * Pages: Main content UI concept, contains page context and UI components.
+ *  * Components: Modular UI concept.
+ *
+ * @namespace Client.Templates
+ * @memberof Client
+ */
 import '/imports/ui/layouts/master-layouts/master-layout.ts';

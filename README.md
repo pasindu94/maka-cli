@@ -10,6 +10,26 @@ It automatically creates project structure, files and boilerplate code.  You may
 
 Maka works great on OSX, Linux, and Windows.
 
+## NOTICE: v2.3.9
+Maka may now use the popular JSDocs CLI to generate documentation for your meteor app. All you need is to make sure you have:
+
+```sh
+$ npm install -g jsdoc
+```
+
+Once you have jsdoc, simply run the following command to create a jsdoc-config.json file in your config/ directory, and output the JSDoc to <project-dir>/docs/ 
+
+```sh
+$ maka jsdoc
+```
+
+All the Meteor 1.3 style templates have been updated with JSDoc tags. This includes the api, ui, routes, and some others.  So if you start a new project with maka, you'll get documentation right from the get go!  Otherwise you'll have to enjoy the new JSDoc comments on newly generated files.
+
+Enjoy! Let me know what you think, or if you have any suggestions!
+
+--
+Maka
+
 ## Installation
 Make sure Meteor is installed:
 
