@@ -16,7 +16,7 @@ FINALLY fixed that bug where ``` $ maka mongo ``` wouldn't kick off the mongo sh
 
 This will also show all the processes that are happening when starting your app, or if Meteor is updating (rather than just seeing a blank line).
 
-## NOTICE: v2.3.9
+## NOTICE: v2.3.0
 Maka may now use the popular JSDocs CLI to generate documentation for your meteor app. All you need is to make sure you have:
 
 ```sh
