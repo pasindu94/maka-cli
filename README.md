@@ -164,13 +164,13 @@ $ maka build
 
 ### Connect to MongoDB Database
 ```sh
-$ cd app/
-$ meteor mongo
+$ maka mongo
 ```
 
-**NOTE** 
-
-*Ideally running `maka mongo` in the project directory should work but it doesn't for some reason and is being tracked in issue #136*
+### Connect to Meteor shell
+```sh
+$ maka shell
+```
 
 ## Deployment
 
