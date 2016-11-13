@@ -12,7 +12,9 @@ Maka works great on OSX, Linux, and Windows.
 
 
 ## NOTICE: v2.3.4
-FINALLY fixed that bug where ``` $ maka monogo ``` wouldn't kick off the mongo shell.  Also fixed that strange spacing that always happens...so now it looks more normal.
+FINALLY fixed that bug where ``` $ maka mongo ``` wouldn't kick off the mongo shell.  Also fixed that strange spacing that always happens...so now it looks more normal.
+
+This will also show all the processes that are happening when starting your app, or if Meteor is updating (rather than just seeing a blank line).
 
 ## NOTICE: v2.3.9
 Maka may now use the popular JSDocs CLI to generate documentation for your meteor app. All you need is to make sure you have:
