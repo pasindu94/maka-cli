@@ -1,6 +1,6 @@
 {
   "name": "maka-cli",
-  "version": "2.3.11",
+  "version": "2.3.13",
   "description": "A command line tool for scaffolding Meteor 1.4.x applications.",
   "homepage": "https://github.com/maka-io/maka-cli",
   "repository": {

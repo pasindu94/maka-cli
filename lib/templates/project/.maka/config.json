@@ -2,7 +2,8 @@
   "engines": {
     "html": "<%= config.engines.html %>",
     "js": "<%= config.engines.js %>",
-    "css": "<%= config.engines.css %>"
+    "css": "<%= config.engines.css %>",
+    "api": "<%= config.engines.api %>"
   },
 
   "template": {
