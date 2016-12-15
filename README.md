@@ -217,6 +217,13 @@ $ heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
 This will build your application and put the resulting bundle into the project's
 build folder.
 
+If that doesn't work, and you're getting a version issue try this build pack:
+
+```sh
+$ heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git#beta
+```
+
+
 Setup MongoDB
 ```sh
 $heroku addons:create mongolab

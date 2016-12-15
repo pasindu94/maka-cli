@@ -12,7 +12,7 @@ import { Template } from 'meteor/templating';
  * @member Events
  */
 /*****************************************************************************/
-Template.<%= name %>.events({
+Template['<%= name %>'].events({
 });
 
 /*****************************************************************************/
@@ -22,7 +22,7 @@ Template.<%= name %>.events({
  * @member Helpers
  */
 /*****************************************************************************/
-Template.<%= name %>.helpers({
+Template['<%= name %>'].helpers({
 });
 
 /*****************************************************************************/
@@ -32,20 +32,20 @@ Template.<%= name %>.helpers({
  * @memberof Client.Templates.<%= name %>
  * @member onCreated
  */
-Template.<%= name %>.onCreated(function() {
+Template['<%= name %>'].onCreated(function() {
 });
 
 /**
  * @memberof Client.Templates.<%= name %>
  * @member onRendered
  */
-Template.<%= name %>.onRendered(function() {
+Template['<%= name %>'].onRendered(function() {
 });
 
 /**
  * @memberof Client.Templates.<%= name %>
  * @member onDestroyed
  */
-Template.<%= name %>.onDestroyed(function() {
+Template['<%= name %>'].onDestroyed(function() {
 });
 

@@ -13,7 +13,7 @@ import { Template } from 'meteor/templating';
  * @member Events
  */
 /*****************************************************************************/
-Template.MasterLayout.events({
+Template'MasterLayout'].events({
 });
 
 /*****************************************************************************/
@@ -23,5 +23,5 @@ Template.MasterLayout.events({
  * @member Helpers
  */
 /*****************************************************************************/
-Template.MasterLayout.helpers({
+Template['MasterLayout'].helpers({
 });
