@@ -3,7 +3,8 @@
     "html": "<%= config.engines.html %>",
     "js": "<%= config.engines.js %>",
     "css": "<%= config.engines.css %>",
-    "api": "<%= config.engines.api %>"
+    "api": "<%= config.engines.api %>",
+    "client": "<%= config.engines.client %>"
   },
 
   "template": {
