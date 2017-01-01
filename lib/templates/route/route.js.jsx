@@ -1,1 +1,3 @@
-<Route path='<%= url %>' component={ <%= templateName %> } />
+<Route path='<%= url %>' component={ <%= layout %> }>
+    <IndexRoute component={ <%= templateName %> }/>
+</Route>

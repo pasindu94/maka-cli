@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
  
-export default class <%= className %> extends Component {
+export class <%= className %> extends Component {
   render() {
-    return ();
+    return (<h2>Find me in <%= myPath %></h2>);
   }
 }

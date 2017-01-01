@@ -11,17 +11,12 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
  * know where to plot the new routes when you make them.
  */
 
-import './templates.js';
+import { MasterLayout } from '/imports/ui/layouts/master-layout/master-layout.jsx';
+import { NotFound } from '/imports/ui/pages/not-found/not-found.jsx';
 
 Meteor.startup( () => {
   render( 
     <Router history={ browserHistory }>
-
-        <Route path="/" component={ MasterLayout }>
-            <IndexRoute component={ Index }>
-        </Route>
-
-
 
         <Route path="*" component={ NotFound } />
     </Router>, 
