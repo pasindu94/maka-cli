@@ -9,6 +9,18 @@ It automatically creates project structure, files and boilerplate code.  You may
 
 Maka works great on OSX, Linux, and Windows.
 
+## NOTICE v2.5.0
+I'm happy to announce that I've added React and React Router support for Maka-Cli!  Now you may create apps that use React and React Router simply by declaring your
+client render engine:
+
+```
+$ maka create ReactApp --client=react
+```
+
+Maka still defaults to Blaze, and this update is backwards compatible with your existing Blaze projects.  Please let me know if you run into any problems.
+
+Enjoy!
+
 
 ## NOTICE: v2.3.4
 FINALLY fixed that bug where ``` $ maka mongo ``` wouldn't kick off the mongo shell.  Also fixed that strange spacing that always happens...so now it looks more normal.
