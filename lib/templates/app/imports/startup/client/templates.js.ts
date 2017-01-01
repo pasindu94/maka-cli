@@ -7,4 +7,3 @@
  * @namespace Client.Templates
  * @memberof Client
  */
-import '/imports/ui/layouts/master-layouts/master-layout.ts';
