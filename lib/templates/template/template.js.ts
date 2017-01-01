@@ -1,51 +1,51 @@
 import { Template } from 'meteor/templating';
 
 /**
- * @namespace Client.Templates.<%= name %>
+ * @namespace Client.Templates.<%= className %>
  * @memberof Client.Templates
  */
 
 /*****************************************************************************/
 /**
- * <%= name %>: Event Handlers
- * @memberof Client.Templates.<%= name %>
+ * <%= className %>: Event Handlers
+ * @memberof Client.Templates.<%= className %>
  * @member Events
  */
 /*****************************************************************************/
-Template['<%= name %>'].events({
+Template['<%= className %>'].events({
 });
 
 /*****************************************************************************/
 /**
- * <%= name %>: Helpers
- * @memberof Client.Templates.<%= name %>
+ * <%= className %>: Helpers
+ * @memberof Client.Templates.<%= className %>
  * @member Helpers
  */
 /*****************************************************************************/
-Template['<%= name %>'].helpers({
+Template['<%= className %>'].helpers({
 });
 
 /*****************************************************************************/
-/** <%= name %>: Life cycle hooks */
+/** <%= className %>: Life cycle hooks */
 /*****************************************************************************/
 /**
- * @memberof Client.Templates.<%= name %>
+ * @memberof Client.Templates.<%= className %>
  * @member onCreated
  */
-Template['<%= name %>'].onCreated(function() {
+Template['<%= className %>'].onCreated(function() {
 });
 
 /**
- * @memberof Client.Templates.<%= name %>
+ * @memberof Client.Templates.<%= className %>
  * @member onRendered
  */
-Template['<%= name %>'].onRendered(function() {
+Template['<%= className %>'].onRendered(function() {
 });
 
 /**
- * @memberof Client.Templates.<%= name %>
+ * @memberof Client.Templates.<%= className %>
  * @member onDestroyed
  */
-Template['<%= name %>'].onDestroyed(function() {
+Template['<%= className %>'].onDestroyed(function() {
 });
 
