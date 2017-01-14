@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var Fiber = require('fibers');
+var argv = require('minimist')(process.argv.slice(2));
+var args = argv._;
+var Maka = require('../lib/maka.js');
+var updateNotifier = require('update-notifier');
+var pkg = require('../package.json');
+
+updateNotifier({pkg}).notify();
+
+global.MAKA_COMMAND_PATH = __dirname;
+
+Fiber(function () {
+  Maka.run(args, argv);
+}).run();
