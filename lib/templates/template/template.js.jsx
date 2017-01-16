@@ -17,7 +17,7 @@ class <%= className %>Component extends Component {
     }
 
     shouldComponentUpdate() {
-
+        return true;
     }
 
     componentWillMount() {
