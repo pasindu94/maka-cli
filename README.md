@@ -9,6 +9,14 @@ It automatically creates project structure, files and boilerplate code.  You may
 
 Maka works great on OSX, Linux, and Windows.
 
+## Notice v2.5.16
+I noticed that our components are going into the "component" directory, and it's been bugging me for a long time... it should go to the "components" directory (with an "s").  I thought I would just let it go, but I can't!  So, I'm going to pull the trigger and set all new components to head on over to the "components" directory.  I know it's a PITA... but we should all feel good that our directory will be grammatically correct now... Yay! (?)
+
+On another note, I spruced up the layout generator for React.  It now creates a full fledged react class instead of the function.  I was creating an app and realized I needed better control of the entire layout than what was initially provided by whatever tutorial I was reading.
+
+Sorry for the inconvenience, I hope a find/replace and a rename on your project component files goes well for moving components over.  If you're happy as a clam having both a "component" and "components" directory (I hope not) then this change can behappily overlooked and you can continue on with your merry way. :D
+
+
 ## Notice v2.5.11
 I'm continually trying to improve the flow of scaffolding with React; making sure I'm in line with the Meteor documentation.  Looking at how MDG wants to handle pub/sub I've implemented the createContainer symbol as a stubbed out constant in the React component template.  I did stray a little from convention, in that the container that wraps it's component doesn't prepend the word "Container" to it.  Let me know if it should, I'm on the fence about it.
 

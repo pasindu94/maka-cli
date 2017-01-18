@@ -3,10 +3,44 @@
  * @memberof Client.Layouts
  */
 
-import React from 'react';
+import React, { Component } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
-export const <%= className %> = ( { children } ) => (
-  <div>
-    { children }
-  </div>
-);
+class <%= className %>Component extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    shouldComponentUpdate() {
+        return true;
+    }
+
+    componentWillMount() {
+    }
+
+    // The main render function
+    render() {
+        return (
+            <div>
+                { this.props.children }
+            </div>
+        );
+    }
+
+    componentDidMount() {
+
+    }
+
+    componentWillUnmount() {
+
+    }
+}
+
+export const <%= className %> = createContainer(({ params }) => {
+
+    // Return our context to the react component.
+    return {};
+
+}, <%= className %>Component);
+
