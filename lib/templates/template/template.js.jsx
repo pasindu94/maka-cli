@@ -1,3 +1,4 @@
+import './<%= fileName %>.css';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
@@ -26,7 +27,7 @@ class <%= className %>Component extends Component {
 
     // The main render function
     render() {
-        return (<h2>Find me in <%= myPath %></h2>);
+        return (<h2 className="<%= fileName %>">Find me in <%= myPath %></h2>);
     }
 
     componentDidMount() {
