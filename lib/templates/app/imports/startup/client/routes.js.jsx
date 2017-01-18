@@ -17,7 +17,9 @@ Meteor.startup( () => {
   render( 
     <Router history={ browserHistory }>
 
-        <Route path="*" component={ Component.NotFound } />
+        <Route path="*" component={ Component.MasterLayout }>
+            <IndexRoute component={ Component.NotFound }/>
+        </Route>
     </Router>, 
     document.getElementById( 'react-root' ) 
   );
