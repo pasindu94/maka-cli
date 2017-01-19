@@ -52,6 +52,16 @@ class <%= className %>Component extends Component {
  * This is where we would create out Meteor.subscribe handler as
  * well as any other context properties that will need to be reactive.
  *
+ * Example:
+ * ```
+ * const subs      = Meteor.subscribe('<%= className %>.public');
+ * const loading   = !subs.ready();
+ * const data      = <%= className %>.find({}).fetch() || [];
+ *
+ * return { loading, data };
+ *
+ * ```
+ * 
  * Refer to this page for more information on the createContainer symbol
  * https://atmospherejs.com/meteor/react-meteor-data
  */
