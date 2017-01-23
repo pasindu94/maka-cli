@@ -8,7 +8,7 @@ import { <%= name %> } from './<%= fileName %>.jsx';
  * Example:
  * ```
  *   if (<%= name %>.find().count() === 0) {
- *       const data = Assets.getText('<%= fileName %>.json') || [ {} ];
+ *       const data = JSON.parse(Assets.getText('<%= fileName %>.json')) || [ {} ];
  *       data.forEach((datum) => {
  *           <%= name %>.insert(datum);
  *       });
