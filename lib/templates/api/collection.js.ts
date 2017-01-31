@@ -1,5 +1,4 @@
 import { Mongo } from 'meteor/mongo';
-import 'meteor/aldeed:collection2';
 
 /**
  * Extension of the Mongo.Collection in order to expose
@@ -69,10 +68,3 @@ export const <%= name %> = new <%= name %>Collection('<%= name %>');
  */
 <%= name %>.publicFields = {};
 <%= name %>.privateFields = {};
-
-<%= name %>.schema = SimpleSchema({
-    _id: { type: String, regEx: SimpleSchema.RegEx.Id, denyUpdate: true },
-});
-
-// Uncomment below to attach the schema
-//<%= name %>.attachSchema(<%= name %>.schema);

@@ -120,7 +120,7 @@ class <%= className %>Component extends Component {
  * Refer to this page for more information on the createContainer symbol
  * https://atmospherejs.com/meteor/react-meteor-data
  */
-export const <%= className %> = createContainer(({ params }) => {
+export const <%= className %> = createContainer((params) => {
 
     // Return our context to the react component.
     return {};
