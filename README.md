@@ -18,8 +18,8 @@ Maka
 
 
 ## Update 2.6.0
-Hey evryone!  I noticed React Router v4 was casing some problems, so I hard set the router to 3.0.2 for the time being.  Once they
-figure that out, I'll have maka go up to 4 when installing.
+Hey evryone!  I noticed React Router v4 was causing some problems, so I clamped react-router @ 3.0.2 for the time being.  Once they
+figure that out, I'll have maka go up to v4.
 
 But that's not the main topic!  I've revamped the testing for React clients, using React's Testing Utilities, shallowDOM, detached DOM
 and Simulator. 
