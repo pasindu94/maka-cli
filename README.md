@@ -9,55 +9,30 @@ It automatically creates project structure, files and boilerplate code.  You may
 
 Maka works great on OSX, Linux, and Windows.
 
-## Notice v2.5.16
-I noticed that our components are going into the "component" directory, and it's been bugging me for a long time... it should go to the "components" directory (with an "s").  I thought I would just let it go, but I can't!  So, I'm going to pull the trigger and set all new components to head on over to the "components" directory.  I know it's a PITA... but we should all feel good that our directory will be grammatically correct now... Yay! (?)
-
-On another note, I spruced up the layout generator for React.  It now creates a full fledged react class instead of the function.  I was creating an app and realized I needed better control of the entire layout than what was initially provided by whatever tutorial I was reading.
-
-Sorry for the inconvenience, I hope a find/replace and a rename on your project component files goes well for moving components over.  If you're happy as a clam having both a "component" and "components" directory (I hope not) then this change can behappily overlooked and you can continue on with your merry way. :D
-
-
-## Notice v2.5.11
-I'm continually trying to improve the flow of scaffolding with React; making sure I'm in line with the Meteor documentation.  Looking at how MDG wants to handle pub/sub I've implemented the createContainer symbol as a stubbed out constant in the React component template.  I did stray a little from convention, in that the container that wraps it's component doesn't prepend the word "Container" to it.  Let me know if it should, I'm on the fence about it.
-
-
-## NOTICE v2.5.0
-I'm happy to announce that I've added React and React Router support for Maka-Cli!  Now you may create apps that use React and React Router simply by declaring your
-client render engine:
-
-```
-$ maka create ReactApp --client=react
-```
-
-Maka still defaults to Blaze, and this update is backwards compatible with your existing Blaze projects.  Please let me know if you run into any problems.
-
-Enjoy!
-
-
-## NOTICE: v2.3.4
-FINALLY fixed that bug where ``` $ maka mongo ``` wouldn't kick off the mongo shell.  Also fixed that strange spacing that always happens...so now it looks more normal.
-
-This will also show all the processes that are happening when starting your app, or if Meteor is updating (rather than just seeing a blank line).
-
-## NOTICE: v2.3.0
-Maka may now use the popular JSDocs CLI to generate documentation for your meteor app. All you need is to make sure you have:
-
-```sh
-$ npm install -g jsdoc
-```
-
-Once you have jsdoc, simply run the following command to create a jsdoc-config.json file in your config/ directory, and output the JSDoc to <project-dir>/docs/ 
-
-```sh
-$ maka jsdoc
-```
-
 All the Meteor 1.3 style templates have been updated with JSDoc tags. This includes the api, ui, routes, and some others.  So if you start a new project with maka, you'll get documentation right from the get go!  Otherwise you'll have to enjoy the new JSDoc comments on newly generated files.
 
 Enjoy! Let me know what you think, or if you have any suggestions!
 
 --
 Maka
+
+
+## Update 2.6.0
+Hey evryone!  I noticed React Router v4 was casing some problems, so I hard set the router to 3.0.2 for the time being.  Once they
+figure that out, I'll have maka go up to 4 when installing.
+
+But that's not the main topic!  I've revamped the testing for React clients, using React's Testing Utilities, shallowDOM, detached DOM
+and Simulator. 
+
+Heads up as well, I'm in the process of two big moves.  1) Set React as the default client engine over Blaze.  2) I've been working to
+get GraphQl as a scaffolded command.  Soon(TM) you'll be able to initialize a client/server GraphQL, Apollo style.  You'll also be able to scaffold out all your resolvers and schemas.  GraphQL is pretty sweet, but it is complicated to get setup.  The work that the Apollo team is doing is making it a lot better, and soon with Meteor 1.5 I should be about ready to update Maka-Cli to take full advantage of Apollo and GraphQL.
+
+Until next time, happy coding!
+
+
+--
+Maka
+
 
 ## Installation
 Make sure Meteor is installed:
@@ -101,6 +76,12 @@ $ maka migrate
 ```sh
 $ maka create my-app
 ```
+
+### Create a React App
+```
+$ maka create ReactApp --client=react
+```
+
 
 The following parameters can be specified:
 ```
@@ -194,6 +175,19 @@ $ maka mongo
 ### Connect to Meteor shell
 ```sh
 $ maka shell
+```
+
+## JSDoc Generated documentation 
+Use the popular JSDocs CLI to generate documentation for your meteor app. All you need is to make sure you have:
+
+```sh
+$ npm install -g jsdoc
+```
+
+Once you have jsdoc, simply run the following command to create a jsdoc-config.json file in your config/ directory, and output the JSDoc to <project-dir>/docs/ 
+
+```sh
+$ maka jsdoc
 ```
 
 ## Deployment
