@@ -1,4 +1,5 @@
-#maka
+# maka
+
 ###### Subscribe on twitter for latest @maka_cli announcements!
 
 Meteor Apps Kick Ass! (maka) 
