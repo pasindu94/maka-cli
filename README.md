@@ -409,7 +409,7 @@ The application will have the following directory structure:
 ## License
 
 The MIT License (MIT)
-Copyright (C) 2016 Campbell Labs 
+Copyright (C) 2017 Campbell Labs, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
